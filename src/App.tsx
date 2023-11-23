@@ -1,19 +1,18 @@
 import { useEffect, useState } from "react";
+import { fetchIpAddress } from "./utils/fetchIp";
 
 function App() {
   const [ipAddress, setIpAddress] = useState<string>("");
 
   useEffect(() => {
-    const fetchIpAddress = async (): Promise<void> => {
-      const url: string = "https://express-ip-address.vercel.app/api";
-      const response: Response = await fetch(url);
-      const data: string = await response.text();
-      setIpAddress(data);
+    const handleRequest: () => Promise<void> = async () => {
+      const result = await fetchIpAddress();
+      setIpAddress(result);
     };
-    fetchIpAddress();
+    handleRequest();
   }, []);
 
-  return <p>{ipAddress}</p>;
+  return <p data-testid="cypress-text">{ipAddress}</p>;
 }
 
 export default App;
