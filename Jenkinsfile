@@ -6,9 +6,8 @@ pipeline {
       steps {
         script {
           // Install dependencies and build the app
-          bat 'npm install pnpm'
-          bat 'pnpm install'
-          bat 'pnpm run build'
+          bat 'npm install'
+          bat 'npm run build'
         }
       }
     }
@@ -17,7 +16,7 @@ pipeline {
       steps {
         script {
           // Run tests
-          bat 'pnpm run test'
+          bat 'npm run test'
         }
       }
     }
@@ -26,7 +25,7 @@ pipeline {
       steps {
         script {
           // Deploy to Vercel or your chosen platform
-          bat 'pnpm run deploy'
+          bat 'npm run deploy'
         }
       }
     }
