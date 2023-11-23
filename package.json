@@ -5,10 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "echo 'BUILD' && pnpm lint && tsc && vite build",
+    "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "test": "echo 'TEST' && pnpm test:unit && pnpm test:integration && pnpm test:e2e",
+    "test": "npm test:unit && npm test:integration && npm test:e2e",
     "test:unit": "jest -- App.test.ts",
     "test:integration": "cypress run cypress/integration/App.cy.tsx",
     "test:e2e": "cypress run cypress/e2e/spec.cy.ts",
