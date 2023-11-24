@@ -39,7 +39,7 @@ pipeline {
           bat 'git checkout -f main'
           bat 'git pull origin dev'
           bat 'git checkout -f main'
-          bat 'git merge dev'
+          bat 'git merge origin/dev'
           bat 'git push origin main'
 
           // Deploy to Vercel or your chosen platform
