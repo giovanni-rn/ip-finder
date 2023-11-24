@@ -37,7 +37,7 @@ pipeline {
           // Merge 'dev' with 'main' branch
           bat 'echo "--- MERGING... ---"'
           bat 'git checkout -f main'
-          bat 'git merge dev'
+          bat 'git merge origin/dev'
           bat 'git push origin main'
 
           // Deploy to Vercel or your chosen platform
