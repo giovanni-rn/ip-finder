@@ -6,9 +6,9 @@ pipeline {
       steps {
         script {
           // Install dependencies and build the app
-          bat 'npm run lint' // Check errors
           bat 'echo "--- INSTALLING DEPENDENCIES... ---"'
           bat 'npm install'
+          bat 'npm run lint' // Check errors
           bat 'echo "--- BUILDING THE APP... ---"'
           bat 'npm run build'
         }
