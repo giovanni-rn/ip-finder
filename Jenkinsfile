@@ -36,7 +36,7 @@ pipeline {
 
           // Merge 'dev' with 'main' branch
           bat 'echo "--- MERGING... ---"'
-          bat 'git checkout main'
+          bat 'git checkout -f main'
           bat 'git merge dev'
           bat 'git push origin main'
 
